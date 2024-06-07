@@ -29,7 +29,6 @@ public class NewsController {
         return "redirect:/news/articles";
     }
 
-    // Unieke URL-mapping voor het weergeven van artikelen
     @GetMapping("/articles")
     public String listArticles(Model model) {
         model.addAttribute("articles", articleRepository.findAll());

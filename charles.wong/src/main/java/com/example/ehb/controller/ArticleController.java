@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.ehb.model.Article;
 import com.example.ehb.service.ArticleService;
 
-import jakarta.validation.Valid; // Vervang javax.validation door jakarta.validation
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/articles")
@@ -56,4 +56,3 @@ public class ArticleController {
         return "redirect:/articles";
     }
 }
-

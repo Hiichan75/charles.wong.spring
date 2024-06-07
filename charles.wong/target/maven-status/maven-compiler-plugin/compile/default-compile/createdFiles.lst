@@ -1,0 +1,6 @@
+com\example\ehb\model\Article.class
+com\example\ehb\controller\ArticleController.class
+com\example\ehb\Application.class
+com\example\ehb\service\ArticleService.class
+com\example\ehb\repository\ArticleRepository.class
+com\example\ehb\controller\NewsController.class

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>News Index</title>
+</head>
+<body>
+<h1>Latest News</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Reporter</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="article : ${articles}">
+        <td th:text="${article.title}">Title</td>
+        <td th:text="${article.reporter}">Reporter</td>
+        <td>
+            <a th:href="@{/details/{id}(id=${article.id})}">Details</a>
+        </td>
+    </tr>
+</table>
+<a href="/new">Add New Article</a>
+</body>
+</html>

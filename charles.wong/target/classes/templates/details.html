@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Article Details</title>
+</head>
+<body>
+<h1>Article Details</h1>
+<p th:text="'Title: ' + ${article.title}"></p>
+<p th:text="'Name: ' + ${article.name}"></p>
+<p th:text="'Category: ' + ${article.category}"></p>
+<p th:text="'Content: ' + ${article.content}"></p>
+<p th:text="'Reporter: ' + ${article.reporter}"></p>
+<p th:text="'Email: ' + ${article.email}"></p>
+<a href="/articles">Back to Articles List</a>
+</body>
+</html>

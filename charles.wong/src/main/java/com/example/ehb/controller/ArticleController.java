@@ -37,13 +37,15 @@ public class ArticleController {
     }
 
     @PostMapping
-    public String saveArticle(@Valid @ModelAttribute Article article, BindingResult result) {
+    public String saveArticle(@Valid @ModelAttribute Article article, BindingResult result, Model model) {
         if (result.hasErrors()) {
+            model.addAttribute("article", article);
             return "new";
         }
         articleService.saveArticle(article);
         return "redirect:/articles";
     }
+
 
     @GetMapping("/delete/{id}")
     public String deleteArticle(@PathVariable Long id) {

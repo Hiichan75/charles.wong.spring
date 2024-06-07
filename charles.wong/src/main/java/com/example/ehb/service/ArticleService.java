@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @Service
 public class ArticleService {
-
     @Autowired
     private ArticleRepository articleRepository;
 
@@ -22,7 +21,6 @@ public class ArticleService {
         return articleRepository.findTop10ByOrderByIdDesc();
     }
 
-    // Overige methoden
     public void saveArticle(Article article) {
         articleRepository.save(article);
     }
@@ -35,3 +33,4 @@ public class ArticleService {
         return articleRepository.findById(id);
     }
 }
+

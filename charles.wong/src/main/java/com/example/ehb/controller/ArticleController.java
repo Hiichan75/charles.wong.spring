@@ -19,7 +19,7 @@ public class ArticleController {
 
     @GetMapping
     public String listArticles(Model model) {
-        model.addAttribute("articles", articleService.getAllArticles());
+        model.addAttribute("articles", articleService.getLast10Articles());
         return "articles";
     }
 

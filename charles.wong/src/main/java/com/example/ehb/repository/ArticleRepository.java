@@ -1,4 +1,7 @@
-package com.example.ehb.repository;
+package com.example.ehb .repository;
 
-public class ArticleRepository {
+import com.example.news.model.Article;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ArticleRepository extends CrudRepository<Article, Long> {
 }

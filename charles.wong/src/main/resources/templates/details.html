@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Article Details</title>
+    <meta charset="UTF-8">
+    <title th:text="#{app.title}">Article Details</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/darkmode.js"></script>
@@ -9,9 +10,9 @@
 <body>
 <div class="wrapper">
     <nav class="navbar">
-        <a class="navbar-brand" href="/articles">Anderlechtse gazette</a>
-        <a class="nav-link" href="/articles/new">New Article</a>
-        <a class="nav-link" href="/articles/about">About</a>
+        <a class="navbar-brand" href="/articles" th:text="#{app.title}">Anderlechtse gazette</a>
+        <a class="nav-link" href="/articles/new" th:text="#{nav.newArticle}">New Article</a>
+        <a class="nav-link" href="/articles/about" th:text="#{nav.about}">About</a>
         <div class="ml-auto">
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
@@ -20,18 +21,18 @@
         </div>
     </nav>
     <div class="container mt-4 content">
-        <h1>Article Details</h1>
-        <p th:text="'Title: ' + ${article.title}"></p>
-        <p th:text="'Name: ' + ${article.name}"></p>
-        <p th:text="'Category: ' + ${article.category}"></p>
-        <p th:text="'Content: ' + ${article.content}"></p>
-        <p th:text="'Reporter: ' + ${article.reporter}"></p>
-        <p th:text="'Email: ' + ${article.email}"></p>
-        <a href="/articles" class="btn btn-secondary">Back to Articles List</a>
+        <h1 th:text="#{article.details}">Article Details</h1>
+        <p><strong th:text="#{form.label.title}">Title:</strong> <span th:text="${article.title}"></span></p>
+        <p><strong th:text="#{form.label.name}">Name:</strong> <span th:text="${article.name}"></span></p>
+        <p><strong th:text="#{form.label.category}">Category:</strong> <span th:text="${article.category}"></span></p>
+        <p><strong th:text="#{form.label.content}">Content:</strong> <span th:text="${article.content}"></span></p>
+        <p><strong th:text="#{form.label.reporter}">Reporter:</strong> <span th:text="${article.reporter}"></span></p>
+        <p><strong th:text="#{form.label.email}">Email:</strong> <span th:text="${article.email}"></span></p>
+        <a href="/articles" class="btn btn-secondary" th:text="#{nav.home}">Back to Articles List</a>
     </div>
     <footer class="footer">
         <div class="container text-center">
-            <p>&copy; 2024 De Anderlechtse Gazet</p>
+            <p th:text="#{footer.copy}">&copy; 2024 De Anderlechtse Gazet</p>
         </div>
     </footer>
 </div>

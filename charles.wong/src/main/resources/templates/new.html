@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>New Article</title>
+    <meta charset="UTF-8">
+    <title th:text="#{article.createNew}">New Article</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/darkmode.js"></script>
@@ -9,9 +10,9 @@
 <body>
 <div class="wrapper">
     <nav class="navbar">
-        <a class="navbar-brand" href="/articles">Anderlechtse gazette</a>
-        <a class="nav-link" href="/articles/new">New Article</a>
-        <a class="nav-link" href="/articles/about">About</a>
+        <a class="navbar-brand" href="/articles" th:text="#{app.title}">Anderlechtse gazette</a>
+        <a class="nav-link" href="/articles/new" th:text="#{nav.newArticle}">New Article</a>
+        <a class="nav-link" href="/articles/about" th:text="#{nav.about}">About</a>
         <div class="ml-auto">
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
@@ -20,50 +21,44 @@
         </div>
     </nav>
     <div class="container mt-4 content">
-        <h1>Create New Article</h1>
+        <h1 th:text="#{article.createNew}">Create New Article</h1>
         <form action="#" th:action="@{/articles}" th:object="${article}" method="post" class="form-group">
             <div class="form-group">
-                <label for="title">Title:</label>
+                <label for="title" th:text="#{form.label.title}">Title:</label>
                 <input type="text" id="title" th:field="*{title}" class="form-control" /><br/>
-                <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error"></div>
+                <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error" th:text="#{error.titleRequired}"></div>
             </div>
-
             <div class="form-group">
-                <label for="name">Name:</label>
+                <label for="name" th:text="#{form.label.name}">Name:</label>
                 <input type="text" id="name" th:field="*{name}" class="form-control" /><br/>
-                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></div>
+                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error" th:text="#{error.nameRequired}"></div>
             </div>
-
             <div class="form-group">
-                <label for="category">Category:</label>
+                <label for="category" th:text="#{form.label.category}">Category:</label>
                 <input type="text" id="category" th:field="*{category}" class="form-control" /><br/>
-                <div th:if="${#fields.hasErrors('category')}" th:errors="*{category}" class="error"></div>
+                <div th:if="${#fields.hasErrors('category')}" th:errors="*{category}" class="error" th:text="#{error.categoryRequired}"></div>
             </div>
-
             <div class="form-group">
-                <label for="content">Content:</label>
+                <label for="content" th:text="#{form.label.content}">Content:</label>
                 <textarea id="content" th:field="*{content}" class="form-control"></textarea><br/>
-                <div th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="error"></div>
+                <div th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="error" th:text="#{error.contentLength}"></div>
             </div>
-
             <div class="form-group">
-                <label for="reporter">Reporter:</label>
+                <label for="reporter" th:text="#{form.label.reporter}">Reporter:</label>
                 <input type="text" id="reporter" th:field="*{reporter}" class="form-control" /><br/>
-                <div th:if="${#fields.hasErrors('reporter')}" th:errors="*{reporter}" class="error"></div>
+                <div th:if="${#fields.hasErrors('reporter')}" th:errors="*{reporter}" class="error" th:text="#{error.reporterRequired}"></div>
             </div>
-
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email" th:text="#{form.label.email}">Email:</label>
                 <input type="email" id="email" th:field="*{email}" class="form-control" /><br/>
-                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></div>
+                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error" th:text="#{error.email}"></div>
             </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" th:text="#{form.submit}">Submit</button>
         </form>
     </div>
     <footer class="footer">
         <div class="container text-center">
-            <p>&copy; 2024 De Anderlechtse Gazet</p>
+            <p th:text="#{footer.copy}">© 2024 De Anderlechtse Gazet</p>
         </div>
     </footer>
 </div>

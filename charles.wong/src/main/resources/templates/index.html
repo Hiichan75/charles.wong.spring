@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
+    <meta charset="UTF-8">
     <title>News Index</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
@@ -8,17 +10,18 @@
 </head>
 <body>
 <div class="wrapper">
-    <nav class="navbar">
-        <a class="navbar-brand" href="/articles">Anderlechtse gazette</a>
-        <a class="nav-link" href="/articles/new">New Article</a>
-        <a class="nav-link" href="/articles/about">About</a>
-        <div class="ml-auto">
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </nav>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a class="navbar-brand" href="/articles" th:text="#{app.title}">Anderlechtse gazette</a>
+            <a class="nav-link" href="/articles/new" th:text="#{nav.newArticle}">New Article</a>
+            <a class="nav-link" href="/articles/about" th:text="#{nav.about}">About</a>
+            <div class="ml-auto">
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </nav>
     <div class="container mt-4 content">
         <h1>Latest News</h1>
         <table class="table">
@@ -46,6 +49,7 @@
             <p>&copy; 2024 De Anderlechtse Gazet</p>
         </div>
     </footer>
+</div>
 </div>
 </body>
 </html>

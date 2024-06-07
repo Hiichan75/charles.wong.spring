@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>About</title>
+    <meta charset="UTF-8">
+    <title th:text="#{app.about}">About</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/darkmode.js"></script>
 </head>
 <body>
 <div class="wrapper">
-    <nav class="navbar" data-theme="light">
-        <a class="navbar-brand" href="/articles">De Anderlechtse Gazet</a>
-        <a class="nav-link" href="/articles/new">New Article</a>
-        <a class="nav-link" href="/articles/about">About</a>
+    <nav class="navbar">
+        <a class="navbar-brand" href="/articles" th:text="#{app.title}">Anderlechtse gazette</a>
+        <a class="nav-link" href="/articles/new" th:text="#{nav.newArticle}">New Article</a>
+        <a class="nav-link" href="/articles/about" th:text="#{nav.about}">About</a>
         <div class="ml-auto">
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
@@ -20,31 +21,26 @@
         </div>
     </nav>
     <div class="container mt-4 content">
-        <h1>About De Anderlechtse Gazet</h1>
+        <h1 th:text="#{about.title}">About De Anderlechtse Gazet</h1>
         <div class="mt-4">
-            <h2>Company Information</h2>
+            <h2 th:text="#{about.company}">Company Information</h2>
             <p>
-                <strong>Address:</strong>
+                <strong th:text="#{about.address}">Address:</strong>
                 <br>123 Fictieve Straat,
                 <br>1000 Brussel,
                 <br>België
             </p>
             <p>
-                <strong>Contact:</strong>
-                <br>Phone: +32 2 123 4567
-                <br>Email: <a href="mailto:info@anderlechtse-gazet.com">info@anderlechtse-gazet.com</a>
+                <strong th:text="#{about.contact}">Contact:</strong>
+                <br><span th:text="#{about.phone}">Phone:</span> +32 2 123 4567
+                <br><span th:text="#{about.email}">Email:</span> <a href="mailto:info@anderlechtse-gazet.com">info@anderlechtse-gazet.com</a>
             </p>
-            <p>
-                <strong>Description:</strong>
-                <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae condimentum erat, non scelerisque est. Duis id quam vitae velit pharetra dapibus. Integer dapibus leo sed lectus volutpat, ac tincidunt est aliquam. Sed sed libero at velit vehicula sagittis. Vivamus vehicula, nisl sit amet sagittis blandit, mi arcu fringilla ipsum, et facilisis velit nunc at libero. Curabitur posuere ligula at tincidunt tristique. Etiam vel nunc sit amet ligula consequat pretium.
-                <br><br>
-                Suspendisse potenti. Donec scelerisque volutpat purus. Praesent tincidunt metus nec erat facilisis, ac euismod est vulputate. Ut scelerisque mi vel purus vulputate, nec cursus nisl tincidunt. Nullam tristique nunc vel magna auctor, a consequat nisl sollicitudin. Morbi ac tortor id erat volutpat convallis. Aliquam erat volutpat.
-            </p>
+            <p th:text="#{about.description}">Lorem ipsum dolor sit amet...</p>
         </div>
     </div>
-    <footer class="footer" data-theme="light">
+    <footer class="footer">
         <div class="container text-center">
-            <p>&copy; 2024 De Anderlechtse Gazet</p>
+            <p th:text="#{footer.copy}">&copy; 2024 De Anderlechtse Gazet</p>
         </div>
     </footer>
 </div>

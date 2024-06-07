@@ -15,29 +15,27 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotEmpty(message = "Title is required")
+    @NotEmpty(message = "{error.titleRequired}")
     private String title;
 
-    @NotEmpty(message = "Name is required")
+    @NotEmpty(message = "{error.nameRequired}")
     private String name;
 
-    @NotEmpty(message = "Category is required")
+    @NotEmpty(message = "{error.categoryRequired}")
     private String category;
 
-    @Size(min = 10, message = "Content should have at least 10 characters")
+    @Size(min = 10, message = "{error.contentLength}")
     private String content;
 
-    @NotEmpty(message = "Reporter is required")
+    @NotEmpty(message = "{error.reporterRequired}")
     private String reporter;
 
-    @Email(message = "Email should be valid")
+    @NotEmpty(message = "{error.email}")
+    @Email(message = "{error.email}")
     private String email;
 
     // Constructors, getters, and setters...
 
-
-
-    // Constructors
     public Article() {
     }
 
@@ -50,7 +48,7 @@ public class Article {
         this.email = email;
     }
 
-    // Getters and Setters
+    // Getters and Setters...
     public Long getId() {
         return id;
     }

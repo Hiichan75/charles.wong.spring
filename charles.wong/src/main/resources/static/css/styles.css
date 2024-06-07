@@ -75,3 +75,41 @@ input:checked + .slider:before {
     color: red;
     font-weight: bold;
 }
+
+/* Zorg ervoor dat body en html de volledige hoogte hebben */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Zorg ervoor dat de wrapper zich uitstrekt over de beschikbare ruimte */
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Inhoud neemt de resterende ruimte in */
+.content {
+    flex: 1;
+}
+
+/* Footer stijlen */
+.footer {
+    background-color: #f1f1f1;
+    color: #555;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #e7e7e7;
+    width: 100%;
+}
+
+.footer.dark-mode {
+    background-color: #333;
+    color: white;
+    border-top: 1px solid #444;
+}
+

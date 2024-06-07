@@ -7,26 +7,33 @@
     <script src="/js/darkmode.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/articles">Home</a>
-    <a class="nav-link" href="/articles/new">New Article</a>
-    <a class="nav-link" href="/articles/about">About</a>
-    <div class="ml-auto">
-        <label class="switch">
-            <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
-            <span class="slider round"></span>
-        </label>
+<div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/articles">Home</a>
+        <a class="nav-link" href="/articles/new">New Article</a>
+        <a class="nav-link" href="/articles/about">About</a>
+        <div class="ml-auto">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
+    <div class="container mt-4 content">
+        <h1>Article Details</h1>
+        <p th:text="'Title: ' + ${article.title}"></p>
+        <p th:text="'Name: ' + ${article.name}"></p>
+        <p th:text="'Category: ' + ${article.category}"></p>
+        <p th:text="'Content: ' + ${article.content}"></p>
+        <p th:text="'Reporter: ' + ${article.reporter}"></p>
+        <p th:text="'Email: ' + ${article.email}"></p>
+        <a href="/articles" class="btn btn-secondary">Back to Articles List</a>
     </div>
-</nav>
-<div class="container mt-4">
-    <h1>Article Details</h1>
-    <p th:text="'Title: ' + ${article.title}"></p>
-    <p th:text="'Name: ' + ${article.name}"></p>
-    <p th:text="'Category: ' + ${article.category}"></p>
-    <p th:text="'Content: ' + ${article.content}"></p>
-    <p th:text="'Reporter: ' + ${article.reporter}"></p>
-    <p th:text="'Email: ' + ${article.email}"></p>
-    <a href="/articles" class="btn btn-secondary">Back to Articles List</a>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 De Anderlechtse Gazet</p>
+        </div>
+    </footer>
 </div>
 </body>
 </html>

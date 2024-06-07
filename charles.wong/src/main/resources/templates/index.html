@@ -7,38 +7,45 @@
     <script src="/js/darkmode.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/articles">Home</a>
-    <a class="nav-link" href="/articles/new">New Article</a>
-    <a class="nav-link" href="/articles/about">About</a>
-    <div class="ml-auto">
-        <label class="switch">
-            <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
-            <span class="slider round"></span>
-        </label>
+<div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/articles">Home</a>
+        <a class="nav-link" href="/articles/new">New Article</a>
+        <a class="nav-link" href="/articles/about">About</a>
+        <div class="ml-auto">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
+    <div class="container mt-4 content">
+        <h1>Latest News</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Reporter</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="article : ${articles}">
+                <td th:text="${article.title}">Title</td>
+                <td th:text="${article.reporter}">Reporter</td>
+                <td>
+                    <a th:href="@{/articles/{id}(id=${article.id})}" class="btn btn-info">Details</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="/articles/new" class="btn btn-primary">Add New Article</a>
     </div>
-</nav>
-<div class="container mt-4">
-    <h1>Latest News</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Reporter</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="article : ${articles}">
-            <td th:text="${article.title}">Title</td>
-            <td th:text="${article.reporter}">Reporter</td>
-            <td>
-                <a th:href="@{/articles/{id}(id=${article.id})}" class="btn btn-info">Details</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <a href="/articles/new" class="btn btn-primary">Add New Article</a>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 De Anderlechtse Gazet</p>
+        </div>
+    </footer>
 </div>
 </body>
 </html>

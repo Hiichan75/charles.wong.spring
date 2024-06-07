@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/darkmode.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/articles">Home</a>
+    <a class="nav-link" href="/articles/new">New Article</a>
+    <a class="nav-link" href="/articles/about">About</a>
+    <div class="ml-auto">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</nav>
+<div class="container mt-4">
+    <h1>About Anderlechtse Gazet</h1>
+    <p>This is a fictitious news website for the Anderlecht region. Contact us at <a href="mailto:info@anderlechtse-gazet.com">info@anderlechtse-gazet.com</a>.</p>
+</div>
+</body>
+</html>

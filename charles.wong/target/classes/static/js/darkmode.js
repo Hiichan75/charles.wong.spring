@@ -2,7 +2,7 @@ function toggleDarkMode() {
     const body = document.body;
     body.classList.toggle("dark-mode");
 
-    const elements = document.querySelectorAll(".navbar, .table, .btn");
+    const elements = document.querySelectorAll(".navbar, .table, .btn, .footer");
     elements.forEach(element => {
         element.classList.toggle("dark-mode");
     });

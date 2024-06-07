@@ -1,24 +1,56 @@
 package com.example.ehb.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Article {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotEmpty(message = "Title is required")
     private String title;
+
+    @NotEmpty(message = "Name is required")
     private String name;
+
+    @NotEmpty(message = "Category is required")
     private String category;
+
+    @Size(min = 10, message = "Content should have at least 10 characters")
     private String content;
+
+    @NotEmpty(message = "Reporter is required")
     private String reporter;
+
+    @Email(message = "Email should be valid")
     private String email;
 
-// Getters and Setters
+    // Constructors, getters, and setters...
 
+
+
+    // Constructors
+    public Article() {
+    }
+
+    public Article(String title, String name, String category, String content, String reporter, String email) {
+        this.title = title;
+        this.name = name;
+        this.category = category;
+        this.content = content;
+        this.reporter = reporter;
+        this.email = email;
+    }
+
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -75,3 +107,16 @@ public class Article {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", content='" + content + '\'' +
+                ", reporter='" + reporter + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+}

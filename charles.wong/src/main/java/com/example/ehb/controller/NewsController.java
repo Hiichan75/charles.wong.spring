@@ -1,39 +1,38 @@
 package com.example.ehb.controller;
 
-import com.example.news.model.Article;
-import com.example.news.repository.ArticleRepository;
+import com.example.ehb.model.Article;
+import com.example.ehb.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/news")
 public class NewsController {
 
     @Autowired
     private ArticleRepository articleRepository;
 
-    @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("articles", articleRepository.findAll());
-        return "index";
-    }
-
     @GetMapping("/new")
-    public String newArticle(Model model) {
+    public String newArticleForm(Model model) {
         model.addAttribute("article", new Article());
         return "new";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/article")
     public String saveArticle(@ModelAttribute Article article) {
         articleRepository.save(article);
-        return "redirect:/";
+        return "redirect:/news/articles";
     }
 
-    @GetMapping("/details/{id}")
-    public String articleDetails(@PathVariable Long id, Model model) {
-        model.addAttribute("article", articleRepository.findById(id).orElse(null));
-        return "details";
+    // Unieke URL-mapping voor het weergeven van artikelen
+    @GetMapping("/articles")
+    public String listArticles(Model model) {
+        model.addAttribute("articles", articleRepository.findAll());
+        return "articles";
     }
 }

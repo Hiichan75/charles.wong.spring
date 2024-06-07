@@ -33,11 +33,6 @@ public class Article {
     @Email(message = "Email should be valid")
     private String email;
 
-    // Constructors, getters, and setters...
-
-
-
-    // Constructors
     public Article() {
     }
 

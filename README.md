@@ -31,11 +31,15 @@ bron: CHATGPT 4o [https://imgur.com/YLl36u5](https://imgur.com/YLl36u5)
 youtube guides: 
 Basics:
 [https://www.youtube.com/watch?v=LSEYdU8Dp9Y](https://www.youtube.com/watch?v=LSEYdU8Dp9Y)
+
 Thymeleaf:
 [https://www.youtube.com/watch?v=KTBWCJPKiqk](https://www.youtube.com/watch?v=KTBWCJPKiqk)
+
 Validation:
 [https://www.youtube.com/watch?v=P5sAaFY3O2w](https://www.youtube.com/watch?v=P5sAaFY3O2w)
+
 Lokalisation:
 [https://www.youtube.com/watch?v=ESzs1q-fpHw](https://www.youtube.com/watch?v=ESzs1q-fpHw)
+
 
 opdracht link: https://imgur.com/UwuFbcN

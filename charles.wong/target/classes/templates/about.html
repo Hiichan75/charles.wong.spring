@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>De Anderlechtse Gazet</title>
+    <title>About</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/darkmode.js"></script>
 </head>
 <body>
 <div class="wrapper">
-    <nav class="navbar">
-        <a class="navbar-brand" href="/articles">Anderlechtse gazette</a>
+    <nav class="navbar" data-theme="light">
+        <a class="navbar-brand" href="/articles">De Anderlechtse Gazet</a>
         <a class="nav-link" href="/articles/new">New Article</a>
         <a class="nav-link" href="/articles/about">About</a>
         <div class="ml-auto">
@@ -20,10 +20,29 @@
         </div>
     </nav>
     <div class="container mt-4 content">
-        <h1>De Anderlechtse Gazet</h1>
-        <p>This is a fictitious news website for the Anderlecht region. Contact us at <a href="mailto:info@anderlechtse-gazet.com">info@anderlechtse-gazet.com</a>.</p>
+        <h1>About De Anderlechtse Gazet</h1>
+        <div class="mt-4">
+            <h2>Company Information</h2>
+            <p>
+                <strong>Address:</strong>
+                <br>123 Fictieve Straat,
+                <br>1000 Brussel,
+                <br>België
+            </p>
+            <p>
+                <strong>Contact:</strong>
+                <br>Phone: +32 2 123 4567
+                <br>Email: <a href="mailto:info@anderlechtse-gazet.com">info@anderlechtse-gazet.com</a>
+            </p>
+            <p>
+                <strong>Description:</strong>
+                <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae condimentum erat, non scelerisque est. Duis id quam vitae velit pharetra dapibus. Integer dapibus leo sed lectus volutpat, ac tincidunt est aliquam. Sed sed libero at velit vehicula sagittis. Vivamus vehicula, nisl sit amet sagittis blandit, mi arcu fringilla ipsum, et facilisis velit nunc at libero. Curabitur posuere ligula at tincidunt tristique. Etiam vel nunc sit amet ligula consequat pretium.
+                <br><br>
+                Suspendisse potenti. Donec scelerisque volutpat purus. Praesent tincidunt metus nec erat facilisis, ac euismod est vulputate. Ut scelerisque mi vel purus vulputate, nec cursus nisl tincidunt. Nullam tristique nunc vel magna auctor, a consequat nisl sollicitudin. Morbi ac tortor id erat volutpat convallis. Aliquam erat volutpat.
+            </p>
+        </div>
     </div>
-    <footer class="footer">
+    <footer class="footer" data-theme="light">
         <div class="container text-center">
             <p>&copy; 2024 De Anderlechtse Gazet</p>
         </div>

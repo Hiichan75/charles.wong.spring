@@ -41,5 +41,3 @@ Validation:
 Lokalisation:
 [https://www.youtube.com/watch?v=ESzs1q-fpHw](https://www.youtube.com/watch?v=ESzs1q-fpHw)
 
-
-opdracht link: https://imgur.com/UwuFbcN

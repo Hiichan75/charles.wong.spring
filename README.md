@@ -6,7 +6,7 @@ PS: Afbeeldingen in de chat zorgen ervoor dat het maken van links mislukt in CHA
 dus ik heb een imgur link gemaakt met de chat history wanneer het zo is.
 
 main imgur link: [https://imgur.com/a/lz8hcTy](https://imgur.com/a/lz8hcTy)
-1. Begrijpen van de opdracht/Setup.
+1. Begrijpen van de opdracht/intial commits/Setup.
 bron: CHATGPT 4o [https://imgur.com/eazI2q6](https://imgur.com/eazI2q6)
 
 2. (Data) Aanmaak van project structuur, dependencies, debuggen, eerste test runs en boots op localhost.

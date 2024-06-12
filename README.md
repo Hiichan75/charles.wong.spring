@@ -29,7 +29,7 @@ bron: CHATGPT 4o [https://imgur.com/YLl36u5](https://imgur.com/YLl36u5)
 
 8. Het fixen van redundantie, column voor artikel, fragments voor navbar en footer.
 
-redundantie:
+redundantie fixes van:
 
 public String saveArticle(@Valid @ModelAttribute Article article, BindingResult result, Model model, Locale locale) {
 if (result.hasErrors()) {

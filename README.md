@@ -27,6 +27,27 @@ bron: CHATGPT 4o [https://chatgpt.com/share/b6a6666c-9622-4535-8380-a7de693072f9
 7. Debuggen van email validation, encoding, config, lokalisations.
 bron: CHATGPT 4o [https://imgur.com/YLl36u5](https://imgur.com/YLl36u5)
 
+8. Het fixen van redundantie, column voor artikel, fragments voor navbar en footer.
+
+redundantie:
+
+public String saveArticle(@Valid @ModelAttribute Article article, BindingResult result, Model model, Locale locale) {
+if (result.hasErrors()) {
+model.addAttribute("article", article);
+
+@Query(value = "SELECT * FROM Article ORDER BY id DESC LIMIT 10", nativeQuery = true)
+List<Article> findTop10ByOrderByIdDesc();
+ofwel gebruik je hibernate en functienamen, ofwel schrijf je een query
+bron: opmerkingen van meneer Van Steertegem op canvas
+
+entity html
+
+column:
+artikel kan nu tot 5000 characters supporteren.
+
+fragments:
+navbar, footer.
+
 
 youtube guides: 
 Basics:

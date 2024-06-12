@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -24,7 +25,8 @@ public class Article {
     @NotEmpty(message = "{error.categoryRequired}")
     private String category;
 
-    @Size(min = 10, message = "{error.contentLength}")
+    @Column(length = 5000) //  Increase length as needed
+    @Size(min = 10, max = 5000, message = "{error.contentLength}")
     private String content;
 
     @NotEmpty(message = "{error.reporterRequired}")

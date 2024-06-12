@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+</head>
+<body>
+<nav class="navbar" th:fragment="navbar">
+    <a class="navbar-brand" href="/articles" th:text="#{app.title}">Anderlechtse gazette</a>
+    <a class="nav-link" href="/articles/new" th:text="#{nav.newArticle}">New Article</a>
+    <a class="nav-link" href="/articles/about" th:text="#{nav.about}">About</a>
+    <div class="ml-auto">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</nav>
+</body>
+</html>

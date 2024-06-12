@@ -49,10 +49,10 @@ public class ArticleController {
         return "new";
     }
 
+
     @PostMapping
     public String saveArticle(@Valid @ModelAttribute Article article, BindingResult result, Model model, Locale locale) {
         if (result.hasErrors()) {
-            model.addAttribute("article", article);
             return "new";
         }
         articleService.saveArticle(article);

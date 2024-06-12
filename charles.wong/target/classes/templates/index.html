@@ -22,34 +22,34 @@
                 </label>
             </div>
         </nav>
-    <div class="container mt-4 content">
-        <h1>Latest News</h1>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Title</th>
-                <th>Reporter</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="article : ${articles}">
-                <td th:text="${article.title}">Title</td>
-                <td th:text="${article.reporter}">Reporter</td>
-                <td>
-                    <a th:href="@{/articles/{id}(id=${article.id})}" class="btn btn-info">Details</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <a href="/articles/new" class="btn btn-primary">Add New Article</a>
-    </div>
-    <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2024 De Anderlechtse Gazet</p>
+        <div class="container mt-4 content">
+            <h1>Latest News</h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Reporter</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="article : ${articles}">
+                    <td th:text="${article.title}">Title</td>
+                    <td th:text="${article.reporter}">Reporter</td>
+                    <td>
+                        <a th:href="@{/articles/{id}(id=${article.id})}" class="btn btn-info">Details</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="/articles/new" class="btn btn-primary">Add New Article</a>
         </div>
-    </footer>
-</div>
+        <footer class="footer">
+            <div class="container text-center">
+                <p>&copy; 2024 De Anderlechtse Gazet</p>
+            </div>
+        </footer>
+    </div>
 </div>
 </body>
 </html>

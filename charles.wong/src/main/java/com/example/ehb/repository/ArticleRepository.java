@@ -7,6 +7,5 @@ import com.example.ehb.model.Article;
 import java.util.List;
 
 public interface ArticleRepository extends JpaRepository<Article, Long> {
-    @Query(value = "SELECT * FROM Article ORDER BY id DESC LIMIT 10", nativeQuery = true)
     List<Article> findTop10ByOrderByIdDesc();
 }

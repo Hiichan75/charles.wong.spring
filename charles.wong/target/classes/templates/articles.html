@@ -9,17 +9,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <nav class="navbar">
-        <a class="navbar-brand" href="/articles" th:text="#{app.title}">Anderlechtse gazette</a>
-        <a class="nav-link" href="/articles/new" th:text="#{nav.newArticle}">New Article</a>
-        <a class="nav-link" href="/articles/about" th:text="#{nav.about}">About</a>
-        <div class="ml-auto">
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </nav>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
     <div class="container mt-4 content">
         <h1 th:text="#{article.list}">List of Articles</h1>
         <table class="table">
@@ -44,9 +34,9 @@
         <a href="/articles/new" class="btn btn-primary" th:text="#{article.addNew}">Add New Article</a>
     </div>
     <footer class="footer">
-        <div class="container text-center">
-            <p th:text="#{footer.copy}">&copy; 2024 De Anderlechtse Gazet</p>
-        </div>
+
+        <div th:replace="~{fragments/footer :: footer}"></div>
+
     </footer>
 </div>
 </body>

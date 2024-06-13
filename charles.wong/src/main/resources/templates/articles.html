@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <div th:replace="fragments/navbar :: navbar"></div>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
     <div class="container mt-4 content">
         <h1 th:text="#{article.list}">List of Articles</h1>
         <table class="table">
@@ -35,7 +35,7 @@
     </div>
     <footer class="footer">
 
-        <div th:replace="fragments/footer :: footer"></div>
+        <div th:replace="~{fragments/footer :: footer}"></div>
 
     </footer>
 </div>

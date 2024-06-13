@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <div th:replace="fragments/navbar :: navbar"></div>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
     <div class="container mt-4 content">
         <h1 th:text="#{article.details}">Article Details</h1>
         <p><strong th:text="#{form.label.title}">Title:</strong> <span th:text="${article.title}"></span></p>
@@ -21,7 +21,7 @@
         <a href="/articles" class="btn btn-secondary" th:text="#{nav.home}">Back to Articles List</a>
     </div>
     <footer class="footer">
-        <div th:replace="fragments/footer :: footer"></div>
+        <div th:replace="~{fragments/footer :: footer}"></div>
     </footer>
 </div>
 </body>

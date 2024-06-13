@@ -10,46 +10,33 @@
 </head>
 <body>
 <div class="wrapper">
-    <div class="wrapper">
-        <nav class="navbar">
-            <a class="navbar-brand" href="/articles" th:text="#{app.title}">Anderlechtse gazette</a>
-            <a class="nav-link" href="/articles/new" th:text="#{nav.newArticle}">New Article</a>
-            <a class="nav-link" href="/articles/about" th:text="#{nav.about}">About</a>
-            <div class="ml-auto">
-                <label class="switch">
-                    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </nav>
-        <div class="container mt-4 content">
-            <h1>Latest News</h1>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Reporter</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="article : ${articles}">
-                    <td th:text="${article.title}">Title</td>
-                    <td th:text="${article.reporter}">Reporter</td>
-                    <td>
-                        <a th:href="@{/articles/{id}(id=${article.id})}" class="btn btn-info">Details</a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <a href="/articles/new" class="btn btn-primary">Add New Article</a>
-        </div>
-        <footer class="footer">
-            <div class="container text-center">
-                <p>&copy; 2024 De Anderlechtse Gazet</p>
-            </div>
-        </footer>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    <div class="container mt-4 content">
+        <h1>Latest News</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Reporter</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="article : ${articles}">
+                <td th:text="${article.title}">Title</td>
+                <td th:text="${article.reporter}">Reporter</td>
+                <td>
+                    <a th:href="@{/articles/{id}(id=${article.id})}" class="btn btn-info">Details</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="/articles/new" class="btn btn-primary">Add New Article</a>
     </div>
+    <footer class="footer">
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </footer>
+</div>
 </div>
 </body>
 </html>

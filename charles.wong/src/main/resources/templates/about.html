@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <div th:replace="fragments/navbar :: navbar"></div>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
     <div class="container mt-4 content">
         <h1 th:text="#{about.title}">About De Anderlechtse Gazet</h1>
         <div class="mt-4">
@@ -30,7 +30,7 @@
     </div>
     <footer class="footer">
 
-        <div th:replace="fragments/footer :: footer"></div>
+        <div th:replace="~{fragments/footer :: footer}"></div>
 
     </footer>
 </div>

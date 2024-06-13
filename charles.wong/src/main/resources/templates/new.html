@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <div th:replace="fragments/navbar :: navbar"></div>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
     <div class="container mt-4 content">
         <h1 th:text="#{article.createNew}">Create New Article</h1>
         <form action="#" th:action="@{/articles}" th:object="${article}" method="post" class="form-group">
@@ -47,7 +47,7 @@
         </form>
     </div>
     <footer class="footer">
-        <div th:replace="fragments/footer :: footer"></div>
+        <div th:replace="~{fragments/footer :: footer}"></div>
     </footer>
 </div>
 </body>
